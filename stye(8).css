@@ -1,0 +1,222 @@
+/* Modern Tourist Card Styling */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background: linear-gradient(135deg, #ffffff, #f0f8ff);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 30px rgba(0, 0, 150, 0.1);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 25px;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 150, 0.15);
+}
+
+/* Add a subtle wave pattern in the background */
+.container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='20' viewBox='0 0 100 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M21.184 20c.357-.13.72-.264.888-.14 1.24-.226 1.57-.39 2.596-.343 1.03.048 1.307-.13 2.422-.564.78-.307 1.193-.343 1.56-.055.468.382.89.56 1.437.432.55-.13 1.23-.638 1.81-.142.58.496 1.598.633 2.37.142.773-.49 1.81-.612 2.433-.28.623.33 1.307.294 1.86-.13.55-.428 1.24-.47 1.81-.106.57.365 1.307.48 2.102.258.794-.223 1.72-.223 2.596 0 .873.223 1.558.482 2.35.258.794-.223 1.719-.47 2.598-.741.878-.27 1.558-.258 2.37.11.81.37 1.72.185 2.598-.13.878-.318 1.558-.428 2.37-.318.81.11 1.72-.106 2.596-.665.878-.56 1.557-.924 2.37-.924.81 0 1.72.364 2.598.924.878.56 1.55.776 2.37.665.818-.11 1.498-.427 2.37-.318.87.11 1.78.448 2.598.13.82-.318 1.498-.776 2.369-.11.87.666 1.83.483 2.74.223.913-.26 1.592-.916 2.453-.665.86.25 1.833.374 2.782.128.95-.246 1.833-.854 2.783-.128.95.726 1.83.39 2.782-.258.95-.648 1.83-.904 2.783-.774.95.13 1.83.638 2.782.904.95.266 1.83.09 2.783-.34.95-.428 1.83-.68 2.782-.595.95.085 1.83.552 2.783.638.95.086 1.83-.172 2.782-.764.95-.592 1.73-.8 2.453-.425.724.375 1.593.67 2.453.425.86-.246 1.592-.892 2.453-.638.86.253 1.833.378 2.782.128.95-.25 1.833-.846 2.783-.128.95.718 1.83.394 2.783-.258.953-.652 1.83-.91 2.783-.774.95.136 1.83.638 2.782.904.95.266 1.93.08 3 -.5l.107-.318L100 0H0l.184.183z' fill='%2356CCF2' fill-opacity='.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    pointer-events: none;
+}
+
+.item.image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 12px;
+    position: relative;
+}
+
+.item.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.item.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 87, 146, 0.3), transparent);
+    z-index: 1;
+    border-radius: 12px;
+}
+
+.item.image:hover img {
+    transform: scale(1.05);
+}
+
+.item.headline {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.item.headline h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #005792;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+.item.headline h2::after {
+    content: "";
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, #00b4db, #005792);
+    bottom: -5px;
+    left: 20%;
+    border-radius: 2px;
+}
+
+.item.paragraph {
+    text-align: center;
+    padding: 5px 20px 15px;
+}
+
+.item.paragraph h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.item.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.item.buttons button {
+    background: linear-gradient(135deg, #00b4db, #005792);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 87, 146, 0.2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.item.buttons button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 87, 146, 0.3);
+    background: linear-gradient(135deg, #005792, #00b4db);
+}
+
+.item.button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.item.button button {
+    background: transparent;
+    color: #005792;
+    border: 2px solid #005792;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.item.button button::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(135deg, #00b4db, #005792);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.item.button button:hover {
+    color: white;
+}
+
+.item.button button:hover::before {
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        grid-gap: 15px;
+        padding: 15px;
+    }
+    
+    .item.image {
+        height: 220px;
+    }
+    
+    .item.headline h2 {
+        font-size: 24px;
+    }
+    
+    .item.paragraph h4 {
+        font-size: 14px;
+    }
+    
+    .item.buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .item.buttons button {
+        width: 80%;
+    }
+}
